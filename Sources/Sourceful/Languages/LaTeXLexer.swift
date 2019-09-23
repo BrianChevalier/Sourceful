@@ -23,16 +23,16 @@ public class LaTeXLexer: SourceCodeRegexLexer {
         
 		generators.append(regexGenerator("(?<=[^a-zA-Z])\\d+", tokenType: .number))
 		
-		generators.append(regexGenerator("\\.\\w+", tokenType: .identifier))
+		//generators.append(regexGenerator("\\.\\w+", tokenType: .identifier))
 		
         var keywords: [String] = []
         let typeList = ["part", "chapter", "section", "subsection", "subsubsection", "paragraph", "subparagraph", "include", "input", "documentclass", "begin"]
         
         for type in typeList {
-            keywords.append("\\\\\(type)\\{([\\w\\s\\.\\/]+)\\}")
+            keywords.append("\\\\" + type + "\\{")
         }
         
-		generators.append(keywordGenerator(keywords, tokenType: .keyword))
+		generators.append(keywordGenerator(keywords, tokenType: .identifier))
 		
 		// Line comment
         generators.append(regexGenerator("%(.*)", tokenType: .comment))
