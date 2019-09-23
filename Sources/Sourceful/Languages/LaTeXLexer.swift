@@ -29,7 +29,7 @@ public class LaTeXLexer: SourceCodeRegexLexer {
         let typeList = ["part", "chapter", "section", "subsection", "subsubsection", "paragraph", "subparagraph", "include", "input", "documentclass", "begin"]
         
         for type in typeList {
-            keywords.append("\\\\" + type + "\\{")
+            keywords.append("\\" + type + "\\{")
         }
         
 		generators.append(keywordGenerator(keywords, tokenType: .identifier))
