@@ -15,6 +15,7 @@ import AppKit
 import UIKit
 #endif
 
+@available(iOS 11.0, macOS 10.11, *)
 public protocol SyntaxTextViewDelegate: class {
 
     func didChangeText(_ syntaxTextView: SyntaxTextView)
@@ -28,6 +29,7 @@ public protocol SyntaxTextViewDelegate: class {
 }
 
 // Provide default empty implementations of methods that are optional.
+@available(iOS 11.0, macOS 10.11, *)
 public extension SyntaxTextViewDelegate {
     func didChangeText(_ syntaxTextView: SyntaxTextView) { }
 
@@ -47,8 +49,9 @@ struct ThemeInfo {
 }
 
 @IBDesignable
+@available(iOS 11.0, macOS 10.11, *)
 open class SyntaxTextView: View {
-
+    
     var previousSelectedRange: NSRange?
 
     private var textViewSelectedRangeObserver: NSKeyValueObservation?
@@ -112,7 +115,7 @@ open class SyntaxTextView: View {
         super.init(coder: aDecoder)
         setup()
     }
-
+    @available(iOS 11.0, macOS 10.11, *)
     private static func createInnerTextView() -> InnerTextView {
         let textStorage = NSTextStorage()
         let layoutManager = SyntaxTextViewLayoutManager()
@@ -142,7 +145,8 @@ open class SyntaxTextView: View {
     public let scrollView = NSScrollView()
 
     #endif
-
+    
+    @available(iOS 11.0, macOS 10.11, *)
     private func setup() {
 
         textView.gutterWidth = 20

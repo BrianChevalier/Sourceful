@@ -16,8 +16,9 @@ import AppKit
 import UIKit
 #endif
 
+@available(iOS 11.0, macOS 10.11, *)
 class LineNumberLayoutManager: NSLayoutManager {
-	
+    
 	var lastParaLocation = 0
 	var lastParaNumber = 0
 	
