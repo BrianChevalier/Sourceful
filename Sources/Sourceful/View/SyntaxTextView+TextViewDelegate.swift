@@ -188,7 +188,7 @@ extension SyntaxTextView {
 #endif
 
 #if os(iOS)
-	
+	@available(iOS 11.0, macOS 10.11, *)
 	extension SyntaxTextView: UITextViewDelegate {
 		
 		open func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

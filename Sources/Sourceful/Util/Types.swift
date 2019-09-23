@@ -40,6 +40,7 @@ import Foundation
 	public typealias Button			= UIButton
 	public typealias Font			= UIFont
 	public typealias Color			= UIColor
+@available(iOS 11.0, macOS 10.11, *)
 	public typealias StackView		= UIStackView
 	public typealias Image			= UIImage
 	public typealias BezierPath		= UIBezierPath

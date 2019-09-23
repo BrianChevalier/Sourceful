@@ -49,18 +49,22 @@ class InnerTextView: TextView {
 	#if os(iOS)
 	
 	var isCursorFloating = false
+    
 	
 	override func beginFloatingCursor(at point: CGPoint) {
-		super.beginFloatingCursor(at: point)
-		
+        if #available(iOS 9, *){
+            super.beginFloatingCursor(at: point)
+        }
 		isCursorFloating = true
 		innerDelegate?.didUpdateCursorFloatingState()
 
 	}
 	
+    
 	override func endFloatingCursor() {
-		super.endFloatingCursor()
-		
+        if #available(iOS 9, *){
+            super.endFloatingCursor()
+        }
 		isCursorFloating = false
 		innerDelegate?.didUpdateCursorFloatingState()
 
