@@ -203,7 +203,7 @@ extension SyntaxTextView {
         
         public func textViewDidEndEditing(_ textView: UITextView) {
             // pass the message up to our own delegate
-            delegate?.textViewDidBeginEditing(self)
+            delegate?.textViewDidEndEditing(self)
         }
 		
 		open func textViewDidChange(_ textView: UITextView) {
